@@ -16,7 +16,7 @@ int main() {
     // magic circle
     for (i=0; i<500; i++) {
         for (j=0; j<500; j++) {
-            double square = i*i + j*j;
+            double square = (i-250)*(i-250) + (j-250)*(j-250);
             if (square/100 > 500 && square/100 < 600) {
                 rgb[0] = i%256; rgb[1] = j%256; rgb[2] = (i+j)%256;
             }
