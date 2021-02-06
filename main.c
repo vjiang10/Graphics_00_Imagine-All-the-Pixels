@@ -18,7 +18,9 @@ int main() {
         for (j=0; j<500; j++) {
             double square = (i-250)*(i-250) + (j-250)*(j-250);
             if (square/100 > 500 && square/100 < 600) {
-                rgb[0] = i%256; rgb[1] = j%256; rgb[2] = (i+j)%256;
+                rgb[0] = i%10; rgb[1] = j%100; rgb[2] = (i+j)%100;
+                int k;
+                for (k=0; k<3; k++) rgb[k]+=(square/100 - 500)/20; 
             }
             else {rgb[0] = rgb[1] = rgb[2] = 0;}
             snprintf(line, sizeof(line), "%d %d %d ", rgb[0], rgb[1], rgb[2]);
